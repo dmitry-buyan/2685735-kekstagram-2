@@ -23,3 +23,24 @@ const string2 = 'Лёша на пАлке клопа нашёл ';
 
 isPalindrome(getNormalizedString(string1)); // true
 isPalindrome(getNormalizedString(string2)); // false
+
+// Task 3
+const getDigitsFromString = (value) => {
+  const string = value.toString();
+  let result = '';
+
+  for (let i = 0; i < string.length; i++) {
+    const number = parseInt(string[i], 10);
+    if (!Number.isNaN(number)) {
+      result += string[i];
+    }
+  }
+
+  return parseInt(result, 10);
+};
+
+getDigitsFromString('2023 год'); // 2023
+getDigitsFromString('ECMAScript 2022'); // 2022
+getDigitsFromString('1 кефир, 0.5 батона'); // 105
+getDigitsFromString('агент 007'); // 7
+getDigitsFromString('а я томат'); // NaN
